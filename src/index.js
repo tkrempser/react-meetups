@@ -4,6 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
+import { initializeFirebase } from "./utils/firebaseUtils";
+
+initializeFirebase();
 
 ReactDOM.render(
   <BrowserRouter>

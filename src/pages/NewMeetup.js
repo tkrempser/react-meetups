@@ -1,17 +1,9 @@
+import { saveFirebase } from "../utils/firebaseUtils";
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 function NewMeetup() {
   function addMeetupHandler(meetupData) {
-    fetch(
-      "https://react-meetups-4e634-default-rtdb.firebaseio.com/meetups.json",
-      {
-        method: "POST",
-        body: JSON.stringify(meetupData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    saveFirebase(meetupData);
   }
 
   return (
