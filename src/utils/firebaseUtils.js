@@ -21,14 +21,14 @@ export function initializeFirebase() {
     .auth()
     .signInAnonymously()
     .catch(function (error) {
-      console.log(error.code, error.message);
+      console.log(error.message);
     });
 }
 
 export function saveFirebase(data) {
   const newKey = firebaseApp.database().ref().push().key;
   const dataObject = { [newKey]: data };
-  firebaseApp.database().ref().update(dataObject);
+  return firebaseApp.database().ref().update(dataObject);
 }
 
 export default firebaseApp;
