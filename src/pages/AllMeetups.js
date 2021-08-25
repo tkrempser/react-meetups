@@ -9,7 +9,7 @@ function AllMeetups() {
   const [allMeetups, setAllMeetups] = useState([]);
 
   useEffect(function () {
-    getFirebase()
+    getFirebase(10)
       .then((snapshot) => {
         if (snapshot.exists()) {
           setAllMeetups(Object.values(snapshot.val()));
@@ -28,7 +28,11 @@ function AllMeetups() {
   return (
     <section>
       <h1>All Meetups</h1>
-      <MeetupList meetups={allMeetups} />
+      {allMeetups.length ? (
+        <MeetupList meetups={allMeetups} />
+      ) : (
+        <p>No meetups available</p>
+      )}
     </section>
   );
 }
