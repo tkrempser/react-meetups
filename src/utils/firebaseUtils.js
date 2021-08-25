@@ -20,15 +20,15 @@ export function initializeFirebase() {
   firebaseApp
     .auth()
     .signInAnonymously()
-    .catch((error) => {
+    .catch(function (error) {
       console.log(error.code, error.message);
     });
 }
 
 export function saveFirebase(data) {
   const newKey = firebaseApp.database().ref().push().key;
-  const meetup = { [newKey]: data };
-  firebaseApp.database().ref().update(meetup);
+  const dataObject = { [newKey]: data };
+  return firebaseApp.database().ref().update(dataObject);
 }
 
 export default firebaseApp;
