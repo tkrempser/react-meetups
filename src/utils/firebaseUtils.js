@@ -31,8 +31,8 @@ export function saveFirebase(data) {
   return firebaseApp.database().ref().update(dataObject);
 }
 
-export function getFirebase() {
-  return firebase.database().ref().get();
+export function getFirebase(limit) {
+  return firebase.database().ref().limitToLast(limit).get();
 }
 
 export default firebaseApp;
