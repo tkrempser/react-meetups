@@ -39,9 +39,11 @@ export function FavoritesContextProvider(props) {
     isFavorite: isFavoriteHandler,
   };
 
-  <FavoritesContext.Provider value={context}>
-    {props.children}
-  </FavoritesContext.Provider>;
+  return (
+    <FavoritesContext.Provider value={context}>
+      {props.children}
+    </FavoritesContext.Provider>
+  );
 }
 
 export default FavoritesContext;
