@@ -12,7 +12,13 @@ function AllMeetups() {
     getFirebase(10)
       .then((snapshot) => {
         if (snapshot.exists()) {
-          setAllMeetups(Object.values(snapshot.val()));
+          setAllMeetups(
+            Object.entries(snapshot.val()).map(function (entry) {
+              let meetupEntry = entry[1];
+              meetupEntry["id"] = entry[0];
+              return meetupEntry;
+            })
+          );
         } else {
           console.log("Empty database");
         }
