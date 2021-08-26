@@ -1,15 +1,25 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const FavoritesContext = createContext({
   favorites: [],
-  favoritesTotal: 0,
   addFavorite: function (favoriteMeetup) {},
   removeFavorite: function (meetupId) {},
   isFavorite: function (meetupId) {},
 });
 
 export function FavoritesContextProvider(props) {
-  const [userFavorites, setUserFavorites] = useState([]);
+  const [userFavorites, setUserFavorites] = useState(
+    localStorage.getItem("favorites-meetups") !== null
+      ? JSON.parse(localStorage.getItem("favorites-meetups"))
+      : []
+  );
+
+  useEffect(
+    function () {
+      localStorage.setItem("favorites-meetups", JSON.stringify(userFavorites));
+    },
+    [userFavorites]
+  );
 
   function addFavoriteHandler(favoriteMeetup) {
     setUserFavorites(function (previousValue) {
@@ -33,7 +43,6 @@ export function FavoritesContextProvider(props) {
 
   const context = {
     favorites: userFavorites,
-    favoritesTotal: 0,
     addFavorite: addFavoriteHandler,
     removeFavorite: removeFavoriteHandler,
     isFavorite: isFavoriteHandler,
