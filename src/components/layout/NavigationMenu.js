@@ -9,13 +9,13 @@ function NavigationMenu() {
       <nav>
         <ul>
           <li>
-            <Link to="/">All Meetups</Link>
+            <Link to="/react-meetups/">All Meetups</Link>
           </li>
           <li>
-            <Link to="/new/">New Meetup</Link>
+            <Link to="/react-meetups/new/">New Meetup</Link>
           </li>
           <li>
-            <Link to="/favorites/">Favorites</Link>
+            <Link to="/react-meetups/favorites/">Favorites</Link>
           </li>
         </ul>
       </nav>
