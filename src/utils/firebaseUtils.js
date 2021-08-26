@@ -27,7 +27,12 @@ export function initializeFirebase() {
 
 export function saveFirebase(data) {
   const newKey = firebaseApp.database().ref().push().key;
-  const dataObject = { [newKey]: data };
+  const dataObject = {
+    [newKey]: {
+      ...data,
+      timestamp: firebase.database.ServerValue.TIMESTAMP,
+    },
+  };
   return firebaseApp.database().ref().update(dataObject);
 }
 
