@@ -10,7 +10,7 @@ function AllMeetups() {
 
   useEffect(function () {
     getFirebase(10)
-      .then((snapshot) => {
+      .then(function (snapshot) {
         if (snapshot.exists()) {
           setAllMeetups(
             Object.entries(snapshot.val()).map(function (entry) {
