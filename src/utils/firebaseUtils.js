@@ -35,13 +35,10 @@ export async function saveFirebase(data) {
 }
 
 export async function getFirebase(limit) {
-  await checkAndInitializeFirebase();
-  return firebase.database().ref().limitToLast(limit).get();
-}
-
-export async function getFirebaseFallback() {
   const response = await fetch(
-    "https://react-meetups-4e634-default-rtdb.firebaseio.com/.json"
+    "https://react-meetups-4e634-default-rtdb.firebaseio.com/.json?orderBy=%22$key%22&limitToLast=".concat(
+      limit
+    )
   );
   return await response.json();
 }
