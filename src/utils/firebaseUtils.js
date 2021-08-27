@@ -14,24 +14,28 @@ var firebaseConfig = {
 
 let firebaseApp;
 
-export function initializeFirebase() {
-  firebaseApp = firebase.initializeApp(firebaseConfig);
+async function checkAndInitializeFirebase() {
+  if (!firebase.apps.length) {
+    firebaseApp = firebase.initializeApp(firebaseConfig);
 
-  firebaseApp
-    .auth()
-    .signInAnonymously()
-    .catch(function (error) {
-      console.log(error.message);
-    });
+    await firebaseApp
+      .auth()
+      .signInAnonymously()
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  }
 }
 
-export function saveFirebase(data) {
+export async function saveFirebase(data) {
+  await checkAndInitializeFirebase();
   const newKey = firebaseApp.database().ref().push().key;
   const dataObject = { [newKey]: data };
   return firebaseApp.database().ref().update(dataObject);
 }
 
-export function getFirebase(limit) {
+export async function getFirebase(limit) {
+  await checkAndInitializeFirebase();
   return firebase.database().ref().limitToLast(limit).get();
 }
 
