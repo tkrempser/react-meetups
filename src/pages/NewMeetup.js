@@ -9,7 +9,7 @@ function NewMeetup() {
   async function addMeetupHandler(meetupData) {
     await saveFirebase(meetupData)
       .then(function () {
-        history.replace("/react-meetups/");
+        history.replace("/");
       })
       .catch(function (error) {
         console.log(error.message);
