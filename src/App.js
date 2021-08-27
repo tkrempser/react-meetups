@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import AllMeetups from "./pages/AllMeetups";
