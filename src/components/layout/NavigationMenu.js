@@ -13,13 +13,13 @@ function NavigationMenu() {
       <nav>
         <ul>
           <li>
-            <Link to="/react-meetups/">All Meetups</Link>
+            <Link to="/">All Meetups</Link>
           </li>
           <li>
-            <Link to="/react-meetups/new/">New Meetup</Link>
+            <Link to="/new/">New Meetup</Link>
           </li>
           <li>
-            <Link to="/react-meetups/favorites/">
+            <Link to="/favorites/">
               Favorites
               <span className={styles.badge}>
                 {favoriteContext.favorites.length}
