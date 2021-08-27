@@ -52,7 +52,7 @@ function NewMeetupForm(props) {
           />
         </div>
         <div className={styles.actions}>
-          <button>Save</button>
+          <button disabled={props.isSaving}>Save</button>
         </div>
       </form>
     </Card>
