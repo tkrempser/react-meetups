@@ -22,6 +22,7 @@
 
 .content {
   text-align: center;
+  word-wrap: break-word;
   padding: 0.5rem 1.5rem 0;
 }
 
