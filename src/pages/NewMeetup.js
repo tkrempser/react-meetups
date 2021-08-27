@@ -6,8 +6,8 @@ import NewMeetupForm from "../components/meetups/NewMeetupForm";
 function NewMeetup() {
   const history = useHistory();
 
-  async function addMeetupHandler(meetupData) {
-    await saveFirebase(meetupData)
+  function addMeetupHandler(meetupData) {
+    saveFirebase(meetupData)
       .then(function () {
         history.replace("/");
       })
