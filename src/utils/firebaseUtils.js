@@ -39,4 +39,11 @@ export async function getFirebase(limit) {
   return firebase.database().ref().limitToLast(limit).get();
 }
 
+export async function getFirebaseFallback() {
+  const response = await fetch(
+    "https://react-meetups-4e634-default-rtdb.firebaseio.com/.json"
+  );
+  return await response.json();
+}
+
 export default firebaseApp;
