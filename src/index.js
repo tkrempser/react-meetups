@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
@@ -11,9 +11,9 @@ initializeFirebase();
 
 ReactDOM.render(
   <FavoritesContextProvider>
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </FavoritesContextProvider>,
   document.getElementById("root")
 );
