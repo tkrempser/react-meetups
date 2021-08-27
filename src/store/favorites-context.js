@@ -9,14 +9,17 @@ const FavoritesContext = createContext({
 
 export function FavoritesContextProvider(props) {
   const [userFavorites, setUserFavorites] = useState(
-    localStorage.getItem("favorites-meetups") !== null
-      ? JSON.parse(localStorage.getItem("favorites-meetups"))
+    sessionStorage.getItem("favorites-meetups") !== null
+      ? JSON.parse(sessionStorage.getItem("favorites-meetups"))
       : []
   );
 
   useEffect(
     function () {
-      localStorage.setItem("favorites-meetups", JSON.stringify(userFavorites));
+      sessionStorage.setItem(
+        "favorites-meetups",
+        JSON.stringify(userFavorites)
+      );
     },
     [userFavorites]
   );
