@@ -9,7 +9,7 @@ function AllMeetups() {
   const [allMeetups, setAllMeetups] = useState([]);
 
   useEffect(function () {
-    getFirebase(10)
+    getFirebase()
       .then(function (snapshot) {
         if (snapshot !== null) {
           setAllMeetups(
