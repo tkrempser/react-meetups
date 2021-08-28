@@ -1,5 +1,6 @@
 .spinner {
   margin: 0;
+  line-height: 0;
   text-align: center;
 }
 
@@ -7,11 +8,15 @@
   width: 1rem;
   height: 1rem;
   background-color: #2351a0;
-
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bounce-delay 1.4s infinite ease-in-out both;
   animation: sk-bounce-delay 1.4s infinite ease-in-out both;
+}
+button .spinner > div {
+  background-color: white;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 .spinner .bounce-1 {

@@ -2,6 +2,7 @@ import { useRef } from "react";
 
 import styles from "./NewMeetupForm.module.css";
 import Card from "../layout/Card";
+import Spinner from "../layout/Spinner";
 
 function NewMeetupForm(props) {
   const titleInputRef = useRef();
@@ -52,7 +53,9 @@ function NewMeetupForm(props) {
           />
         </div>
         <div className={styles.actions}>
-          <button disabled={props.isSaving}>Save</button>
+          <button disabled={props.isSaving}>
+            {props.isSaving ? <Spinner /> : "Save"}
+          </button>
         </div>
       </form>
     </Card>

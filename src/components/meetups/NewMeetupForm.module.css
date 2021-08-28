@@ -44,14 +44,15 @@
   border: 1px solid #2351a0;
   border-radius: 4px;
   font-weight: bold;
-}
-
-.actions button:disabled {
-  background-color: #7b96c6;
-  border: 1px solid #7b96c6;
+  height: 2.5rem;
 }
 
 .actions button:hover,
 .actions button:active {
   background-color: #3c6bb9;
+}
+
+.actions button:disabled {
+  background-color: #7b96c6;
+  border: 1px solid #7b96c6;
 }
