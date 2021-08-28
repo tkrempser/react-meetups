@@ -33,21 +33,40 @@ function NewMeetupForm(props) {
       <form className={styles.form} onSubmit={submitHandler}>
         <div className={styles.control}>
           <label htmlFor="title">Title</label>
-          <input type="text" id="title" required ref={titleInputRef} />
+          <input
+            type="text"
+            id="title"
+            disabled={props.isSaving}
+            required
+            ref={titleInputRef}
+          />
         </div>
         <div className={styles.control}>
           <label htmlFor="image">Image URL</label>
-          <input type="url" id="image" required ref={imageInputRef} />
+          <input
+            type="url"
+            id="image"
+            disabled={props.isSaving}
+            required
+            ref={imageInputRef}
+          />
         </div>
         <div className={styles.control}>
           <label htmlFor="address">Address</label>
-          <input type="text" id="address" required ref={addressInputRef} />
+          <input
+            type="text"
+            id="address"
+            disabled={props.isSaving}
+            required
+            ref={addressInputRef}
+          />
         </div>
         <div className={styles.control}>
           <label htmlFor="description">Description</label>
           <textarea
             id="description"
             rows="5"
+            disabled={props.isSaving}
             required
             ref={descriptionInputRef}
           />

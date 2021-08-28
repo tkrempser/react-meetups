@@ -14,7 +14,7 @@
   animation: sk-bounce-delay 1.4s infinite ease-in-out both;
 }
 button .spinner > div {
-  background-color: white;
+  background-color: #e9eef7;
   width: 0.75rem;
   height: 0.75rem;
 }

@@ -59,7 +59,7 @@
 .header a {
   text-decoration: none;
   font-size: 1.25rem;
-  color: #d3deef;
+  color: white;
 }
 
 @media (max-width: 767.98px) {
@@ -71,7 +71,7 @@
 .header a:hover,
 .header a:active,
 .header a.active {
-  color: white;
+  color: #becde7;
 }
 
 .badge {

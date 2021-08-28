@@ -50,6 +50,7 @@
 .actions button:hover,
 .actions button:active {
   background-color: #3c6bb9;
+  color: #e9eef7;
 }
 
 .actions button:disabled {
