@@ -2,4 +2,4 @@
 
 Project developed to study React concepts.
 
-Live preview: https://tkrempser.github.io/react-meetups/
+Live demo: https://tkrempser.github.io/react-meetups/
